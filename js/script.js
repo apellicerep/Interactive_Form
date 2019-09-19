@@ -158,7 +158,7 @@ $('button').on("click", function (event) {
     event.preventDefault()
     let name = $('#name').val()
     let mail = $('#mail').val()
-    let cardNum1 = parseInt($('#cc-m').val())
+    let cardNum1 = parseInt($('#cc-num').val())
     let zipCode = parseInt($('#zip').val())
     let cVv = parseInt($('#cvv').val())
     let errorValidation = 0;
@@ -215,9 +215,9 @@ function validateActivities(activities) {
 function validateCreditCard(cardNum1, zipCode, cVv) {
     console.log(!isNaN(cardNum1))
     let check = 0;
-    if (!((cardNum1 < 13 && cardNum1 > 3) || !isNaN(cardNum1))) { $('#cardNum_error').show(); check++; }
-    if (!((zipCode.length === 5) || !isNaN(zipCode))) { $('#zipCode_error').show(); check++; }
-    if (!((cVv.length === 3) || !isNaN(cVv))) { $('#cvv_error').show(); check++ }
+    if (!((cardNum1.toString().length > 13) && (cardNum1.toString().length < 16)) || isNaN(cardNum1)) { $('#cardNum_error').show(); check++; }
+    if (!((zipCode.toString().length === 5) || isNaN(zipCode))) { $('#zipCode_error').show(); check++; }
+    if (!((cVv.toString().length === 3) || isNaN(cVv))) { $('#cvv_error').show(); check++ }
     if (check != 0) { return true } return false
 
 }
