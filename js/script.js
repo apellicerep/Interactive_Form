@@ -162,6 +162,7 @@ $('button').on("click", function (event) {
     let zipCode = parseInt($('#zip').val())
     let cVv = parseInt($('#cvv').val())
     let errorValidation = 0;
+    console.log(cardNum1)
 
 
     if (validateName(name)) { errorValidation++ }
@@ -216,8 +217,8 @@ function validateCreditCard(cardNum1, zipCode, cVv) {
     console.log(!isNaN(cardNum1))
     let check = 0;
     if (!((cardNum1.toString().length > 13) && (cardNum1.toString().length < 16)) || isNaN(cardNum1)) { $('#cardNum_error').show(); check++; }
-    if (!((zipCode.toString().length === 5) || isNaN(zipCode))) { $('#zipCode_error').show(); check++; }
-    if (!((cVv.toString().length === 3) || isNaN(cVv))) { $('#cvv_error').show(); check++ }
+    if (!((zipCode.toString().length === 5) && !isNaN(zipCode))) { $('#zipCode_error').show(); check++; }
+    if (!((cVv.toString().length === 3) && !isNaN(cVv))) { $('#cvv_error').show(); check++ }
     if (check != 0) { return true } return false
 
 }
