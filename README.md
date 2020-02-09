@@ -8,3 +8,4 @@ Using the supplied HTML and CSS files, I added ALL the JavaScript to make the fo
 * validating user input and providing helpful error messages when the user enters invalid information into the form fields.
 * Instead of plain "vanilla" JavaScript, I used the popular jQuery library to complete this project to get familiar with this library since it is so common and prevalent on the web.
 
+![.](https://github.com/apellicerep/Interactive_Form/blob/master/InteractiveForm.gif)
